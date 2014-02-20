@@ -392,8 +392,9 @@ step5()
 	cmake $SOURCE_DIRECTORY/$KICAD_DIRECTORY -DKICAD_SCRIPTING=ON                                              \
 	                                         -DKICAD_SCRIPTING_MODULES=ON                                      \
 	                                         -DKICAD_SCRIPTING_WXPYTHON=ON                                     \
-	                                         -DCMAKE_CXX_FLAGS=-D__ASSERTMACROS__                              \
-                                                 -DCMAKE_ASM_FLAGS="${CMAKE_ASM_FLAGS}"                            \
+                                             -DBUILD_GITHUB_PLUGIN=ON                                          \
+	                                         -DCMAKE_CXX_FLAGS="-D__ASSERTMACROS__ -stdlib=libstdc++"          \
+                                             -DCMAKE_ASM_FLAGS="${CMAKE_ASM_FLAGS}"                            \
 	                                         -DCMAKE_INSTALL_PREFIX=$PREFIX_DIRECTORY                          \
 	                                         -DCMAKE_FIND_FRAMEWORK=LAST                                       \
 	                                         -DwxWidgets_CONFIG_EXECUTABLE=$PREFIX_DIRECTORY/bin/wx-config     \
